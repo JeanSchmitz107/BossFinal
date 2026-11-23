@@ -1,4 +1,6 @@
-﻿namespace Boss_final;
+﻿using System.Net.NetworkInformation;
+
+namespace Boss_final;
 
 /*
     CONSIGNES
@@ -35,5 +37,31 @@ class Program
     static void Main(string[] args)
     {
         
+
+
+
     }
+
+    public static int CalculateWeaponDamage(int weaponPower)
+    {
+        int degats = weaponPower;
+        return degats;
+    }
+
+    public static int CalculateRemainingHealth(int pv_boss, int degats)
+    {
+        int pv_boss -= degats;
+        return pv_boss;
+    }
+
+    public static int DisplayBossStatus(int pv_boss)
+    {
+        Console.WriteLine("Le Boss à " + pv_boss + " pv");
+        if(pv_boss > 0)
+        {
+            Console.WriteLine("Le boss est toujours vivant !");
+        }
+        else if 
+    }
+
 }
