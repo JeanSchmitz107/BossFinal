@@ -45,11 +45,31 @@ class Program
         }
     }
 
+
+
+
+    /*
+     
+        the player : découvrir quelle type de Boss, choisir une arm, Attaquer / se défendre
+        
+        the enemies : plusieurs type d'ataque, probabiliter d'attaque / se défendre
+
+     */
+
+
+    //dégat de l'arm (en fonction du type de boss)
+
     public static int CalculateWeaponDamage(int weaponPower)
     {
         int degats = weaponPower;
         return degats;
     }
+
+
+
+
+
+    //Calcules du combat de boss
 
     public static int CalculateRemainingHealth(int pvBoss, int degats)
     {
@@ -74,5 +94,4 @@ class Program
             Console.WriteLine("error");
         }
     }
-
 }
