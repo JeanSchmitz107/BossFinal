@@ -36,10 +36,13 @@ class Program
 {
     static void Main(string[] args)
     {
-        
-
-
-
+        int pvBoss = 150;
+        int degats = CalculateWeaponDamage(40);
+        while(pvBoss > 0)
+        {
+            pvBoss = CalculateRemainingHealth(pvBoss, degats);
+            DisplayBossStatus(pvBoss);
+        }
     }
 
     public static int CalculateWeaponDamage(int weaponPower)
@@ -48,20 +51,28 @@ class Program
         return degats;
     }
 
-    public static int CalculateRemainingHealth(int pv_boss, int degats)
+    public static int CalculateRemainingHealth(int pvBoss, int degats)
     {
-        int pv_boss -= degats;
-        return pv_boss;
+        pvBoss -= degats;
+        return pvBoss;
     }
 
-    public static int DisplayBossStatus(int pv_boss)
+    public static void DisplayBossStatus(int pvBoss)
     {
-        Console.WriteLine("Le Boss à " + pv_boss + " pv");
-        if(pv_boss > 0)
+        if(pvBoss > 0)
         {
+            Console.WriteLine("|Le Boss est à " + pvBoss + " pv|");
             Console.WriteLine("Le boss est toujours vivant !");
         }
-        else if 
+        else if(pvBoss <= 0)
+        {
+            Console.WriteLine("|Le Boss est à 0 pv|");
+            Console.WriteLine("Félicitations ! Le boss est vaincu !");
+        }
+        else
+        {
+            Console.WriteLine("error");
+        }
     }
 
 }
