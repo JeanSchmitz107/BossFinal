@@ -36,6 +36,7 @@ class Program
 {
     static void Main(string[] args)
     {
+
         int pvBoss = 150;
         int degats = CalculateWeaponDamage(40);
         while(pvBoss > 0)
@@ -59,7 +60,7 @@ class Program
 
     //dégat de l'arm (en fonction du type de boss)
 
-    public static int CalculateWeaponDamage(int weaponPower)
+    static int CalculateWeaponDamage(int weaponPower)
     {
         int degats = weaponPower;
         return degats;
@@ -71,13 +72,13 @@ class Program
 
     //Calcules du combat de boss
 
-    public static int CalculateRemainingHealth(int pvBoss, int degats)
+    static int CalculateRemainingHealth(int pvBoss, int degats)
     {
         pvBoss -= degats;
         return pvBoss;
     }
 
-    public static void DisplayBossStatus(int pvBoss)
+    static void DisplayBossStatus(int pvBoss)
     {
         if(pvBoss > 0)
         {
